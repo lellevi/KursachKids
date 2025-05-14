@@ -13,7 +13,7 @@ using ZedGraph;
 namespace KursachProject
 {
     public partial class VisitDataForParents : Form
-    {
+    { // 
         private readonly string _connectionString;
 
         public VisitDataForParents(string connectionString)

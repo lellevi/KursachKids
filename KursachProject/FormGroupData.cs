@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using KursachProject.Models;
+using KursachProject.Repositories;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,10 +18,27 @@ namespace KursachProject
     public partial class FormGroupData : Form
     {
         private readonly string _connectionString;
+        private readonly GroupSqlRepository _repository;
 
         public FormGroupData(string connectionString)
         {
             _connectionString = connectionString;
+            _repository = new GroupSqlRepository(_connectionString);
+
+            try
+            {
+                var createdId = _repository.Create(new GroupData 
+                { 
+                    NameOfGroup = "123",
+                    MentorId = 1,
+                    CountOfKids = 15, 
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
             InitializeComponent();
             Download();
         }
@@ -108,19 +127,6 @@ namespace KursachProject
             string group_id = dataGridView1.Rows[index].Cells[0].Value.ToString();
             string mentor_id = dataGridView1.Rows[index].Cells[1].Value.ToString();
             string count_of_kids = dataGridView1.Rows[index].Cells[2].Value.ToString();
-
-            OleDbConnection dbConnection = new OleDbConnection(_connectionString);
-
-            dbConnection.Open();
-            string query = $"INSERT INTO GroupData VALUES ({group_id},{mentor_id},{count_of_kids})"; 
-
-            OleDbCommand dbCommand = new OleDbCommand(query, dbConnection);
-
-            if (dbCommand.ExecuteNonQuery() != 1)
-                MessageBox.Show("Ошибка выполнения запроса!", "Ошибка");
-            else
-                MessageBox.Show("Данные добавлены!", "Внимание!");
-            dbConnection.Close();
         }
 
         private void buttonUpdate_Click(object sender, EventArgs e)
