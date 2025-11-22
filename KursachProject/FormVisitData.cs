@@ -110,7 +110,7 @@ namespace KursachProject
                 {
                     int selectedID = formChild.SelectedID;
                     string selectedValue = formChild.SelectedValue;
-                    _dataTable.Rows.Add(0,selectedID, selectedValue,"12.12.2000","");//!!!!!
+                    _dataTable.Rows.Add(0,selectedID, selectedValue,"10.10.2025","Болезнь");
 
                     MessageBox.Show($"Выбранный ID: {selectedID}, Значение: {selectedValue}");
                 }
@@ -156,39 +156,33 @@ namespace KursachProject
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            //Проверяем кол-во выбранных строк
             if (dataGridView1.SelectedRows.Count != 1)
             {
                 MessageBox.Show("Выберите одну строку!", "Внимание!");
                 return;
             }
-            //запомним выбранную строку
             int index = dataGridView1.SelectedRows[0].Index;
 
-            //проверяем данные таблицы  
             if (dataGridView1.Rows[index].Cells[0].Value == null)
             {
                 MessageBox.Show("Не все данные введены!", "Внимание!");
             }
-            //тут считываем данные. Для удаления хватит только айди
             string note_id = dataGridView1.Rows[index].Cells[0].Value.ToString();
 
-            OleDbConnection dbConnection = new OleDbConnection(_connectionString);//создаем соединение
+            OleDbConnection dbConnection = new OleDbConnection(_connectionString);
 
-            //запрос
-            dbConnection.Open();//открываем соединение
+            dbConnection.Open();
             string query = "DELETE FROM VisitData WHERE note_id = " + note_id;
-            OleDbCommand dbCommand = new OleDbCommand(query, dbConnection);//команда
+            OleDbCommand dbCommand = new OleDbCommand(query, dbConnection);
 
-            //выполняем запрос
-            if (dbCommand.ExecuteNonQuery() != 1)//туда мы отправляем одну строку данных, нам возвращается количество добавленных данных
+            if (dbCommand.ExecuteNonQuery() != 1)
                 MessageBox.Show("Ошибка выполнения запроса!", "Ошибка");
             else
             {
                 MessageBox.Show("Данные удалены!", "Внимание!");
                 dataGridView1.Rows.RemoveAt(index);
             }
-            //закрываем соединение
+
             dbConnection.Close();
         }
 

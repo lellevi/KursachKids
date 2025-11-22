@@ -29,83 +29,21 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
-            buttonDownload = new Button();
-            buttonAdd = new Button();
-            buttonUpdate = new Button();
-            buttonDelete = new Button();
-            label1 = new Label();
-            buttonExit = new Button();
             label2 = new Label();
+            buttonDownLoad1 = new Button();
+            buttonExit = new Button();
+            buttonDelete = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(59, 118);
+            dataGridView1.Location = new Point(40, 80);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(848, 240);
+            dataGridView1.Size = new Size(945, 217);
             dataGridView1.TabIndex = 0;
-            // 
-            // buttonDownload
-            // 
-            buttonDownload.Location = new Point(987, 58);
-            buttonDownload.Name = "buttonDownload";
-            buttonDownload.Size = new Size(176, 61);
-            buttonDownload.TabIndex = 1;
-            buttonDownload.Text = "Обновить данные в таблице";
-            buttonDownload.UseVisualStyleBackColor = true;
-            buttonDownload.Click += buttonDownload_Click;
-            // 
-            // buttonAdd
-            // 
-            buttonAdd.Location = new Point(987, 140);
-            buttonAdd.Name = "buttonAdd";
-            buttonAdd.Size = new Size(176, 40);
-            buttonAdd.TabIndex = 2;
-            buttonAdd.Text = "Добавить ";
-            buttonAdd.UseVisualStyleBackColor = true;
-            buttonAdd.Click += buttonAdd_Click;
-            // 
-            // buttonUpdate
-            // 
-            buttonUpdate.Location = new Point(987, 200);
-            buttonUpdate.Name = "buttonUpdate";
-            buttonUpdate.Size = new Size(176, 40);
-            buttonUpdate.TabIndex = 3;
-            buttonUpdate.Text = "Отредактировать";
-            buttonUpdate.UseVisualStyleBackColor = true;
-            buttonUpdate.Click += buttonUpdate_Click;
-            // 
-            // buttonDelete
-            // 
-            buttonDelete.Location = new Point(987, 258);
-            buttonDelete.Name = "buttonDelete";
-            buttonDelete.Size = new Size(176, 40);
-            buttonDelete.TabIndex = 4;
-            buttonDelete.Text = "Удалить";
-            buttonDelete.UseVisualStyleBackColor = true;
-            buttonDelete.Click += buttonDelete_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(987, 31);
-            label1.Name = "label1";
-            label1.Size = new Size(157, 20);
-            label1.TabIndex = 5;
-            label1.Text = "Действия с данными:";
-            // 
-            // buttonExit
-            // 
-            buttonExit.Location = new Point(987, 318);
-            buttonExit.Name = "buttonExit";
-            buttonExit.Size = new Size(176, 40);
-            buttonExit.TabIndex = 6;
-            buttonExit.Text = "Выход";
-            buttonExit.UseVisualStyleBackColor = true;
-            buttonExit.Click += buttonExit_Click;
             // 
             // label2
             // 
@@ -117,19 +55,46 @@
             label2.TabIndex = 21;
             label2.Text = "Данные о детях";
             // 
+            // buttonDownLoad1
+            // 
+            buttonDownLoad1.Location = new Point(425, 318);
+            buttonDownLoad1.Name = "buttonDownLoad1";
+            buttonDownLoad1.Size = new Size(176, 56);
+            buttonDownLoad1.TabIndex = 24;
+            buttonDownLoad1.Text = "Обновить данные в таблице";
+            buttonDownLoad1.UseVisualStyleBackColor = true;
+            buttonDownLoad1.Click += buttonDownload_Click;
+            // 
+            // buttonExit
+            // 
+            buttonExit.Location = new Point(809, 318);
+            buttonExit.Name = "buttonExit";
+            buttonExit.Size = new Size(176, 56);
+            buttonExit.TabIndex = 23;
+            buttonExit.Text = "Выход";
+            buttonExit.UseVisualStyleBackColor = true;
+            buttonExit.Click += buttonExit_Click;
+            // 
+            // buttonDelete
+            // 
+            buttonDelete.Location = new Point(618, 318);
+            buttonDelete.Name = "buttonDelete";
+            buttonDelete.Size = new Size(176, 56);
+            buttonDelete.TabIndex = 22;
+            buttonDelete.Text = "Удалить";
+            buttonDelete.UseVisualStyleBackColor = true;
+            buttonDelete.Click += buttonDelete_Click;
+            // 
             // FormKids
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 255, 255);
-            ClientSize = new Size(1194, 398);
-            Controls.Add(label2);
+            ClientSize = new Size(1004, 398);
+            Controls.Add(buttonDownLoad1);
             Controls.Add(buttonExit);
-            Controls.Add(label1);
             Controls.Add(buttonDelete);
-            Controls.Add(buttonUpdate);
-            Controls.Add(buttonAdd);
-            Controls.Add(buttonDownload);
+            Controls.Add(label2);
             Controls.Add(dataGridView1);
             Name = "FormKids";
             Text = "Дети";
@@ -141,12 +106,9 @@
         #endregion
 
         private DataGridView dataGridView1;
-        private Button buttonDownload;
-        private Button buttonAdd;
-        private Button buttonUpdate;
-        private Button buttonDelete;
-        private Label label1;
-        private Button buttonExit;
         private Label label2;
+        private Button buttonDownLoad1;
+        private Button buttonExit;
+        private Button buttonDelete;
     }
 }

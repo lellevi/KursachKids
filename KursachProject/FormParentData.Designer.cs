@@ -29,83 +29,21 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
-            buttonExit = new Button();
-            label1 = new Label();
-            buttonDelete = new Button();
-            buttonUpdate = new Button();
-            buttonAdd = new Button();
-            buttonDownload = new Button();
             label2 = new Label();
+            buttonDownLoad1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(41, 138);
+            dataGridView1.Location = new Point(32, 115);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(730, 241);
+            dataGridView1.Size = new Size(959, 241);
             dataGridView1.TabIndex = 1;
-            // 
-            // buttonExit
-            // 
-            buttonExit.Location = new Point(801, 339);
-            buttonExit.Name = "buttonExit";
-            buttonExit.Size = new Size(176, 40);
-            buttonExit.TabIndex = 12;
-            buttonExit.Text = "Выход";
-            buttonExit.UseVisualStyleBackColor = true;
-            buttonExit.Click += buttonExit_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(801, 52);
-            label1.Name = "label1";
-            label1.Size = new Size(157, 20);
-            label1.TabIndex = 11;
-            label1.Text = "Действия с данными:";
-            // 
-            // buttonDelete
-            // 
-            buttonDelete.Location = new Point(801, 279);
-            buttonDelete.Name = "buttonDelete";
-            buttonDelete.Size = new Size(176, 40);
-            buttonDelete.TabIndex = 10;
-            buttonDelete.Text = "Удалить";
-            buttonDelete.UseVisualStyleBackColor = true;
-            buttonDelete.Click += buttonDelete_Click;
-            // 
-            // buttonUpdate
-            // 
-            buttonUpdate.Location = new Point(801, 221);
-            buttonUpdate.Name = "buttonUpdate";
-            buttonUpdate.Size = new Size(176, 40);
-            buttonUpdate.TabIndex = 9;
-            buttonUpdate.Text = "Обновить";
-            buttonUpdate.UseVisualStyleBackColor = true;
-            buttonUpdate.Click += buttonUpdate_Click;
-            // 
-            // buttonAdd
-            // 
-            buttonAdd.Location = new Point(801, 161);
-            buttonAdd.Name = "buttonAdd";
-            buttonAdd.Size = new Size(176, 40);
-            buttonAdd.TabIndex = 8;
-            buttonAdd.Text = "Добавить";
-            buttonAdd.UseVisualStyleBackColor = true;
-            buttonAdd.Click += buttonAdd_Click;
-            // 
-            // buttonDownload
-            // 
-            buttonDownload.Location = new Point(801, 88);
-            buttonDownload.Name = "buttonDownload";
-            buttonDownload.Size = new Size(176, 52);
-            buttonDownload.TabIndex = 7;
-            buttonDownload.Text = "Обновить данные в таблице";
-            buttonDownload.UseVisualStyleBackColor = true;
-            buttonDownload.Click += buttonDownload_Click;
             // 
             // label2
             // 
@@ -117,19 +55,46 @@
             label2.TabIndex = 21;
             label2.Text = "Данные о родителях";
             // 
+            // buttonDownLoad1
+            // 
+            buttonDownLoad1.Location = new Point(431, 385);
+            buttonDownLoad1.Name = "buttonDownLoad1";
+            buttonDownLoad1.Size = new Size(176, 56);
+            buttonDownLoad1.TabIndex = 25;
+            buttonDownLoad1.Text = "Обновить данные в таблице";
+            buttonDownLoad1.UseVisualStyleBackColor = true;
+            buttonDownLoad1.Click += buttonDownload_Click;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(815, 385);
+            button2.Name = "button2";
+            button2.Size = new Size(176, 56);
+            button2.TabIndex = 24;
+            button2.Text = "Выход";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += buttonExit_Click;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(624, 385);
+            button3.Name = "button3";
+            button3.Size = new Size(176, 56);
+            button3.TabIndex = 23;
+            button3.Text = "Удалить";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += buttonDelete_Click;
+            // 
             // FormParentData
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 255, 255);
             ClientSize = new Size(1018, 461);
+            Controls.Add(buttonDownLoad1);
+            Controls.Add(button2);
+            Controls.Add(button3);
             Controls.Add(label2);
-            Controls.Add(buttonExit);
-            Controls.Add(label1);
-            Controls.Add(buttonDelete);
-            Controls.Add(buttonUpdate);
-            Controls.Add(buttonAdd);
-            Controls.Add(buttonDownload);
             Controls.Add(dataGridView1);
             Name = "FormParentData";
             Text = "FormParentData";
@@ -140,12 +105,9 @@
 
         #endregion
         private DataGridView dataGridView1;
-        private Button buttonExit;
-        private Label label1;
-        private Button buttonDelete;
-        private Button buttonUpdate;
-        private Button buttonAdd;
-        private Button buttonDownload;
         private Label label2;
+        private Button buttonDownLoad1;
+        private Button button2;
+        private Button button3;
     }
 }
